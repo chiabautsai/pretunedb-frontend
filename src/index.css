@@ -11,3 +11,309 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Form styles */
+input[type='text'],
+input[type='password'],
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+button[type='submit'] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+/* Button styles */
+button,
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: #0056b3;
+}
+
+button.primary,
+.button.primary {
+  background-color: #007bff;
+}
+
+button.secondary,
+.button.secondary {
+  background-color: #6c757d;
+}
+
+button.success,
+.button.success {
+  background-color: #28a745;
+}
+
+button.danger,
+.button.danger {
+  background-color: #dc3545;
+}
+
+button.warning,
+.button.warning {
+  background-color: #ffc107;
+}
+
+button.info,
+.button.info {
+  background-color: #17a2b8;
+}
+
+button.light,
+.button.light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+button.dark,
+.button.dark {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Card styles */
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Alert styles */
+.alert {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.alert-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.alert-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.alert-info {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.alert-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.alert-dark {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+table th {
+  font-weight: bold;
+}
+
+/* Navigation bar styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.navbar li {
+  margin-left: 10px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+.navbar .logo {
+  font-weight: bold;
+}
+
+.navbar .menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar .logo {
+    margin-right: auto;
+  }
+
+  .navbar .menu-icon .bars {
+    background-color: #fff;
+    width: 18px;
+    height: 3px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .navbar .menu-icon.open .bars.line-1 {
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+
+  .navbar .menu-icon.open .bars.line-3 {
+    transform: rotate(45deg) translate(-4px, -4px);
+  }
+
+  .navbar .menu-icon.open .bars.line-2 {
+    opacity: 0;
+  }
+
+  .navbar ul.open {
+    display: block;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
