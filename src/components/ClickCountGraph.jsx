@@ -2,10 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { AuthContext } from '../contexts/AuthContext';
-import { API_URL_BASE } from '../config';
+import { ApiContext } from '../contexts/ApiContext';
 
 const ClickCountGraph = ({ recordId }) => {
     const { token } = useContext(AuthContext);
+    const { apiUrlBase:API_URL_BASE } = useContext(ApiContext);
     const [clickCountData, setClickCountData] = useState([]);
   
     useEffect(() => {
@@ -32,7 +33,7 @@ const ClickCountGraph = ({ recordId }) => {
       };
   
       fetchClickCountData();
-    }, [recordId, token]);
+    }, [recordId, token, API_URL_BASE]);
   
     const calculateClickCounts = () => {
       const clickCounts = {};

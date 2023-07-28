@@ -1,11 +1,13 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { API_URL_BASE } from '../config';
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import { ApiContext } from '../contexts/ApiContext';
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
   const [token, setToken] = useState(() => localStorage.getItem('token') || null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const { apiUrlBase:API_URL_BASE } = useContext(ApiContext);
 
   useEffect(() => {
     if (token) {

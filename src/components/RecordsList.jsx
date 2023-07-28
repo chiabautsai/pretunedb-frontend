@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
-import { API_URL_BASE } from '../config';
+import { ApiContext } from '../contexts/ApiContext';
 import TimeDisplay from './TimeDisplay';
 
 const RecordsList = () => {
@@ -9,6 +9,7 @@ const RecordsList = () => {
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState('-time'); // Default sort by time in ascending order
 
+  const { apiUrlBase:API_URL_BASE } = useContext(ApiContext);
   const API_URL = `${API_URL_BASE}/records`;
   const { token } = useContext(AuthContext);
 

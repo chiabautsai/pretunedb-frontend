@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
-import { API_URL_BASE } from '../config';
+import { ApiContext } from '../contexts/ApiContext';
 import TimeDisplay from './TimeDisplay';
 import ClickCountGraph from './ClickCountGraph';
 
@@ -15,6 +15,7 @@ const RecordDetails = () => {
 
   const navigate = useNavigate();
 
+  const { apiUrlBase:API_URL_BASE } = useContext(ApiContext);
   const API_URL = `${API_URL_BASE}/records/${id}`;
 
   useEffect(() => {

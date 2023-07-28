@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
-import { API_URL_BASE } from '../config';
+import { ApiContext } from '../contexts/ApiContext';
 import ClickCountGraph from './ClickCountGraph';
 import TimeDisplay from './TimeDisplay';
 
@@ -8,6 +8,7 @@ const ClicksList = () => {
   const [clicks, setClicks] = useState([]);
   const [sortBy, setSortBy] = useState('-time'); // Default sort by time in descending order
 
+  const { apiUrlBase:API_URL_BASE } = useContext(ApiContext);
   const API_URL = `${API_URL_BASE}/clicks`;
   const { token } = useContext(AuthContext);
 
