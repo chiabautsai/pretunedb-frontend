@@ -86,7 +86,7 @@ const AuthContextProvider = (props) => {
     setToken(null);
   };
 
-  const authContextValue = { token, isLoggedIn, login, register, verify, logout };
+  const authContextValue = { token, isLoggedIn, setToken, login, register, verify, logout };
 
   return (
     <AuthContext.Provider value={authContextValue}>

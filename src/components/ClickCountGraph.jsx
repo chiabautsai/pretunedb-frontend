@@ -21,6 +21,9 @@ const ClickCountGraph = ({ recordId }) => {
               Authorization: `Bearer ${token}`,
             },
           });
+          if (!response.ok) {
+            throw new Error('Network response was not 200');
+          }
           const data = await response.json();
           setClickCountData(data);
         } catch (error) {

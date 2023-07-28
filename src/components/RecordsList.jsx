@@ -28,7 +28,13 @@ const RecordsList = () => {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not 200');
+        }
+        return response.json();
+      })
+      .then((r) => {console.log(r); return r;})
       .then((data) => setRecords(data))
       .catch((error) => console.error('Error fetching records:', error));
   }, [search, sortBy, API_URL, token]);

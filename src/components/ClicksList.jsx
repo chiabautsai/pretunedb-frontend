@@ -24,7 +24,12 @@ const ClicksList = () => {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not 200');
+        }
+        return response.json();
+      })
       .then((data) => setClicks(data))
       .catch((error) => console.error('Error fetching clicks:', error));
   }, [sortBy, API_URL, token]);
