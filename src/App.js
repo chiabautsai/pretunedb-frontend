@@ -48,7 +48,7 @@ const App = () => {
         </nav>
 
         <Routes>
-          <Route path="/records" element={<RecordsList />} />
+          <Route path="/records" element={<RecordsList excludedProperties={['id', 'downloadLinks']} />} />
           <Route path="/records/:id" element={<RecordDetails />} />
           <Route path="/clicks" element={<ClicksList />} />
           <Route path="/register" element={<Register />} />
