@@ -63,12 +63,6 @@ return (
         <option value="-time">Time (Descending)</option>
         <option value="preName">Pre Name (Ascending)</option>
         <option value="-preName">Pre Name (Descending)</option>
-        <option value="a_id">A ID (Ascending)</option>
-        <option value="-a_id">A ID (Descending)</option>
-        <option value="thread_id">Thread ID (Ascending)</option>
-        <option value="-thread_id">Thread ID (Descending)</option>
-        <option value="post_id">Post ID (Ascending)</option>
-        <option value="-post_id">Post ID (Descending)</option>
       </select>
     </div>
 

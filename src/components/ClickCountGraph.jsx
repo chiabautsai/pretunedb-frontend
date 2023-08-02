@@ -14,7 +14,7 @@ const ClickCountGraph = ({ recordId }) => {
         try {
           let url = `${API_URL_BASE}/clicks`;
           if (recordId) {
-            url += `?filterBy=record_id&filterValue=${recordId}`;
+            url += `?filterBy=recordID&filterValue=${recordId}`;
           }
   
           const response = await fetch(url, {
@@ -37,7 +37,7 @@ const ClickCountGraph = ({ recordId }) => {
   
     const calculateClickCounts = () => {
       const clickCounts = {};
-      for (let i = 0; i < 30; i++) {
+      for (let i = 1; i <= 30; i++) {
         const currentDate = new Date();
         currentDate.setDate(currentDate.getDate() - (30 - i));
         clickCounts[currentDate.toDateString()] = 0;
